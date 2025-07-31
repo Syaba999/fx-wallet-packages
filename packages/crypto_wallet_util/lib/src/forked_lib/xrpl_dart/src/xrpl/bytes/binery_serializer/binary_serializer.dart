@@ -41,7 +41,7 @@ OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import 'package:blockchain_utils/binary/binary.dart';
+import 'package:blockchain_utils/blockchain_utils.dart';
 import 'package:crypto_wallet_util/src/forked_lib/xrpl_dart/src/xrpl/bytes/definations/field.dart';
 
 /// Constants for binary serializer

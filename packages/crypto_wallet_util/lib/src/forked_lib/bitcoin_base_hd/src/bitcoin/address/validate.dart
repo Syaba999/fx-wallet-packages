@@ -1,11 +1,7 @@
-import 'package:blockchain_utils/base58/base58_base.dart';
-import 'package:blockchain_utils/bech32/bch_bech32.dart';
-import 'package:blockchain_utils/compare/compare.dart';
-import 'package:blockchain_utils/crypto/quick_crypto.dart';
-import 'core.dart';
+import 'package:blockchain_utils/blockchain_utils.dart';
 
 import '../../models/network.dart';
-
+import 'core.dart';
 
 List<int>? decodeLegacyAddress(String address, BitcoinAddressType type,
     {required BasedUtxoNetwork network}) {
@@ -45,6 +41,16 @@ List<int>? decodeLegacyAddress(String address, BitcoinAddressType type,
     default:
   }
   return addrBytes;
+}
+
+bool bytesEqual(List<int> checksum, List<int> hash) {
+  if (checksum.length != hash.length) {
+    return false;
+  }
+  for (int i = 0; i < checksum.length; i++) {
+    if (checksum[i] != hash[i]) return false;
+  }
+  return true;
 }
 
 bool isValidHash160(String hash160) {

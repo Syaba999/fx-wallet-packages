@@ -1,6 +1,8 @@
 import 'dart:convert';
+
+import 'package:blockchain_utils/blockchain_utils.dart';
+
 import '../../../bitcoin_base.dart';
-import 'package:blockchain_utils/binary/utils.dart';
 
 typedef BitcoinSignerCallBack = String Function(
     List<int> trDigest, UtxoWithAddress utxo, String publicKey, int sighash);

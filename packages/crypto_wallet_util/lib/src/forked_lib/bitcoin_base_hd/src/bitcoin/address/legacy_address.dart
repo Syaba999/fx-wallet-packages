@@ -1,13 +1,9 @@
-import 'package:blockchain_utils/base58/base58.dart';
-import 'package:blockchain_utils/bech32/bch_bech32.dart';
-import 'package:blockchain_utils/binary/utils.dart';
-import 'package:blockchain_utils/bip/ecc/keys/secp256k1_keys_ecdsa.dart';
-import 'package:blockchain_utils/crypto/quick_crypto.dart';
+import 'package:blockchain_utils/blockchain_utils.dart';
 
+import '../../models/network.dart';
 import '../address/core.dart';
 import '../address/validate.dart';
 import '../script/script.dart';
-import '../../models/network.dart';
 
 abstract class LegacyAddress implements BitcoinAddress {
   /// Represents a Bitcoin address
@@ -143,10 +139,8 @@ class P2shAddress extends LegacyAddress {
 }
 
 class P2pkhAddress extends LegacyAddress {
-  P2pkhAddress.fromScript({required super.script})
-      : super.fromScript();
-  P2pkhAddress.fromAddress(
-      {required super.address, required super.network})
+  P2pkhAddress.fromScript({required super.script}) : super.fromScript();
+  P2pkhAddress.fromAddress({required super.address, required super.network})
       : super.fromAddress();
   P2pkhAddress.fromHash160({required String addrHash})
       : super.fromHash160(addrHash);
@@ -169,7 +163,7 @@ class P2pkhAddress extends LegacyAddress {
 class P2pkAddress extends LegacyAddress {
   P2pkAddress({required String publicKey}) : super._() {
     final toBytes = BytesUtils.fromHexString(publicKey);
-    if (!Secp256k1PublicKeyEcdsa.isValidBytes(toBytes)) {
+    if (!Secp256k1PublicKey.isValidBytes(toBytes)) {
       throw ArgumentError("The public key is wrong");
     }
     publicHex = publicKey;

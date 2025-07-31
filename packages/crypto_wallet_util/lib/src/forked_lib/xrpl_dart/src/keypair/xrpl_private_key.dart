@@ -1,4 +1,6 @@
 import 'package:blockchain_utils/blockchain_utils.dart';
+
+import '../../../bitcoin_base_hd/src/bitcoin/address/validate.dart';
 import '../xrpl/exception/exceptions.dart';
 import 'xrpl_public_key.dart';
 
@@ -89,7 +91,7 @@ class XrpSeedUtils {
         combine = [...data, ...root];
       }
       final hash = QuickCrypto.sha512Hash(combine).sublist(0, 32);
-      if (Secp256k1PrivateKeyEcdsa.isValidBytes(hash)) {
+      if (Secp256k1PrivateKey.isValidBytes(hash)) {
         return BigintUtils.fromBytes(hash);
       }
     }
@@ -227,7 +229,7 @@ class XRPPrivateKey {
     switch (algorithm) {
       case XRPKeyAlgorithm.secp256k1:
         final derive = XrpSeedUtils.deriveKeyPair(entropyBytes);
-        final privateKey = Secp256k1PrivateKeyEcdsa.fromBytes(derive);
+        final privateKey = Secp256k1PrivateKey.fromBytes(derive);
         return XRPPrivateKey._(privateKey, algorithm);
       default:
         final privateBytes = XrpSeedUtils.deriveED25519(entropyBytes);

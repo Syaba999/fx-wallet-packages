@@ -1,7 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:blockchain_utils/binary/binary_operation.dart';
-import 'package:blockchain_utils/numbers/int_utils.dart';
+import 'package:blockchain_utils/blockchain_utils.dart';
 
 import '../script/op_code/constant.dart';
 

@@ -1,11 +1,10 @@
-import 'package:blockchain_utils/bech32/bech32.dart';
-import 'package:blockchain_utils/binary/utils.dart';
-import 'package:blockchain_utils/crypto/quick_crypto.dart';
+import 'package:blockchain_utils/blockchain_utils.dart';
+import 'package:blockchain_utils/blockchain_utils.dart';
 
+import '../../models/network.dart';
 import '../address/core.dart';
 import '../script/op_code/constant.dart';
 import '../script/script.dart';
-import '../../models/network.dart';
 
 abstract class SegwitAddress implements BitcoinAddress {
   static int _segwitVersion(String version) {

@@ -1,7 +1,7 @@
-import 'package:blockchain_utils/bip/address/p2pkh_addr.dart';
 import 'package:blockchain_utils/blockchain_utils.dart';
-import '../xrpl/address/xrpl.dart';
 
+import '../../../bitcoin_base_hd/src/bitcoin/address/validate.dart';
+import '../xrpl/address/xrpl.dart';
 import 'xrpl_private_key.dart';
 
 class RippleKeyConst {
@@ -31,7 +31,7 @@ class XRPPublicKey {
           bytesEqual(prefix, Ed25519KeysConst.pubKeyPrefix)) {
         return XRPKeyAlgorithm.ed25519;
       }
-      if (Secp256k1PublicKeyEcdsa.isValidBytes(keyBytes)) {
+      if (Secp256k1PrivateKey.isValidBytes(keyBytes)) {
         return XRPKeyAlgorithm.secp256k1;
       }
     }

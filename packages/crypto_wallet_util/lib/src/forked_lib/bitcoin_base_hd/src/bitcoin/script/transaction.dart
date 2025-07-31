@@ -1,18 +1,7 @@
 import 'dart:typed_data';
 
-import 'package:blockchain_utils/binary/binary_operation.dart';
-import 'package:blockchain_utils/binary/utils.dart';
-import 'package:blockchain_utils/crypto/quick_crypto.dart';
-import 'package:blockchain_utils/numbers/bigint_utils.dart';
-import 'package:blockchain_utils/numbers/int_utils.dart';
-
-import 'input.dart';
-import 'output.dart';
-import 'script.dart';
-import 'witness.dart';
-import '../script/op_code/constant.dart';
-import '../../crypto/crypto.dart';
-import '../../bytes_utils/dynamic_byte.dart';
+import 'package:blockchain_utils/blockchain_utils.dart';
+import 'package:crypto_wallet_util/src/forked_lib/bitcoin_base_hd/bitcoin_base.dart';
 
 /// Represents a Bitcoin transaction
 ///

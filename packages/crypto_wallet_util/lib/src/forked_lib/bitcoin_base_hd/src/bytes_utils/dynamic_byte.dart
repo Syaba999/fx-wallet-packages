@@ -1,4 +1,4 @@
-import 'package:blockchain_utils/binary/binary_operation.dart';
+import 'package:blockchain_utils/utils/binary/binary_operation.dart';
 
 class DynamicByteTracker {
   final List<int> _buffer = List<int>.empty(growable: true);

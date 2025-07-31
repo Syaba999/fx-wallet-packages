@@ -1,8 +1,6 @@
 import 'dart:typed_data';
-import 'package:blockchain_utils/binary/utils.dart';
-import 'package:blockchain_utils/numbers/bigint_utils.dart';
-import 'package:blockchain_utils/numbers/int_utils.dart';
-import 'package:blockchain_utils/tuple/tuple.dart';
+
+import 'package:blockchain_utils/blockchain_utils.dart';
 
 import '../script/script.dart';
 

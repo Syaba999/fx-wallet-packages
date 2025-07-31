@@ -1,8 +1,7 @@
-import 'package:blockchain_utils/binary/utils.dart';
+import 'package:blockchain_utils/blockchain_utils.dart';
 
 import '../../bitcoin/script/op_code/constant.dart';
 import '../../crypto/keypair/ec_public.dart';
-
 import 'script.dart';
 
 class ControlBlock {

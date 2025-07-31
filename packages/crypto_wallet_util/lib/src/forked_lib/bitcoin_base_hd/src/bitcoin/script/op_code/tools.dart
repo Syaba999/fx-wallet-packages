@@ -1,5 +1,4 @@
-import 'package:blockchain_utils/binary/binary_operation.dart';
-import 'package:blockchain_utils/binary/utils.dart';
+import 'package:blockchain_utils/blockchain_utils.dart';
 
 List<int> opPushData(String hexData) {
   final List<int> dataBytes = BytesUtils.fromHexString(hexData);

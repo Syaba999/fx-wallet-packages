@@ -69,4 +69,14 @@ class XChainBridge extends SerializedType {
     }
     return toJson;
   }
+
+  static bool iterableIsEqual(Iterable keys, List<String> keys2) {
+    if (keys.length != keys2.length) {
+      return false;
+    }
+    for (final key in keys) {
+      if (!keys2.contains(key)) return false;
+    }
+    return true;
+  }
 }

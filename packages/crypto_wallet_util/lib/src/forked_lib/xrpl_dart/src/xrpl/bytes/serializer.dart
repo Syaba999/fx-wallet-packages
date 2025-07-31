@@ -43,12 +43,16 @@ OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 library xrp_serializer;
 
 import 'dart:convert';
+
 import 'package:blockchain_utils/blockchain_utils.dart';
+import 'package:crypto_wallet_util/src/forked_lib/xrpl_dart/src/xrpl/bytes/binery_serializer/binary_parser.dart';
 import 'package:crypto_wallet_util/src/forked_lib/xrpl_dart/src/xrpl/bytes/binery_serializer/binary_serializer.dart';
 import 'package:crypto_wallet_util/src/forked_lib/xrpl_dart/src/xrpl/bytes/definations/definations.dart';
 import 'package:crypto_wallet_util/src/forked_lib/xrpl_dart/src/xrpl/bytes/definations/field.dart';
-import 'package:crypto_wallet_util/src/forked_lib/xrpl_dart/src/xrpl/bytes/binery_serializer/binary_parser.dart';
 import 'package:crypto_wallet_util/src/forked_lib/xrpl_dart/src/xrpl/exception/exceptions.dart';
+
+import '../../../../bitcoin_base_hd/src/bitcoin/address/validate.dart';
+
 part 'types/account_id.dart';
 part 'types/amount.dart';
 part 'types/blob.dart';

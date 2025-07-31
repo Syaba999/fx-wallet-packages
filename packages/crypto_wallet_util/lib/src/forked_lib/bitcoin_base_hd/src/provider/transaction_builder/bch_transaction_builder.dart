@@ -1,6 +1,8 @@
 import 'dart:convert';
+
+import 'package:blockchain_utils/blockchain_utils.dart';
+
 import '../../../bitcoin_base.dart';
-import 'package:blockchain_utils/binary/utils.dart';
 
 class BCHTransactionBuilder {
   final List<BitcoinOutput> outPuts;

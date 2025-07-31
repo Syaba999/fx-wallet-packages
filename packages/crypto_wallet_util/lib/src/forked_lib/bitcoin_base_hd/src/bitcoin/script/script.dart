@@ -1,11 +1,9 @@
-import 'package:blockchain_utils/binary/binary_operation.dart';
-import 'package:blockchain_utils/binary/utils.dart';
-import 'package:blockchain_utils/numbers/int_utils.dart';
+import 'package:blockchain_utils/blockchain_utils.dart';
 
-import '../address/legacy_address.dart';
-import '../script/op_code/constant_lib.dart';
 import '../../crypto/crypto.dart';
-import '../../bytes_utils/dynamic_byte.dart';
+import '../address/legacy_address.dart';
+import 'op_code/constant.dart';
+import 'op_code/tools.dart';
 
 enum ScriptType { P2PKH, P2SH, P2WPKH, P2WSH, P2PK }
 
